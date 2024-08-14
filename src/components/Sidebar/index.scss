@@ -1,0 +1,46 @@
+:root {
+    --mainColor: rgb(172, 27, 27);
+    --hoverColor: rgb(202, 76, 76);
+    --backgroundColor: #1e1e1e;
+    --darkOne: #f3f3f3;
+    --darkTwo: #fff;
+    --lightOne: #ccc;
+    --lightTwo: #e7e3e3; 
+    --mainHex: #AC1B1B;
+    --primaryContent: #f7cfcf;
+}
+
+.nav-bar {
+    background: var(--backgroundColor);
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    min-height: 500px;
+  
+    .logo {
+      display: block;
+      padding: 8px 0;
+      text-decoration: none;
+  
+      img {
+        display: block;
+        margin: 8px auto;
+        width: 24px;
+        height: auto;
+      }
+  
+      .logo-subtitle {
+        width: 100%;
+        display: block;
+        margin: 8px auto;
+        text-align: center;
+        font-size: 10px;
+        text-transform: uppercase;
+        color: var(--lightOne);
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+      }
+    }
+  }
