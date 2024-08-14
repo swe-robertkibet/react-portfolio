@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 
 const Home = () => {
@@ -42,10 +43,20 @@ const Home = () => {
         };
     }, []);
 
+    const [letterClass, setLetterClass] = useState('text-animate')
+    const nameArray = ['']
+    const jobArray = ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r', '.']
+
     return (
         <div className="container home-page">
             <div className="text-zone">
-                <h1>Hi, <br /> I'm
+                <h1>
+                    <span className={letterClass}>H</span>
+                    <span className={`${letterClass} _12`}>i,</span>
+                    <br />
+                    <span className={`${letterClass} _13`}>I</span>
+                    <span className={`${letterClass} _14`}>'m</span>
+
                     <span className="scramble-letter">&nbsp;</span>
                     {displayedName.split('').map((letter, index) => (
                         <React.Fragment key={index}>
@@ -58,8 +69,10 @@ const Home = () => {
                             </span>
                         </React.Fragment>
                     ))}
+
                     <br />
-                    Software Engineer
+                    <AnimatedLetters letterClass={letterClass} strArray={jobArray} idx={22} />
+                    {/* Software Engineer. */}
                 </h1>
                 <h2>Problem solver | Innovator | Learner</h2>
                 <Link to="/contact" className="flat-button">CONTACT ME</Link>
