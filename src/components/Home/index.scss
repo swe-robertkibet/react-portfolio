@@ -8,6 +8,10 @@ $primary-color: #ffd700;
     transform: translateY(-50%);
     width: 40%;
     max-height: 90%;
+
+    &:hover {
+        cursor:crosshair;
+    }
   }
 
   h1 {
