@@ -1,3 +1,16 @@
+$colors: (
+  yellow: yellow,
+  dark-gray: #1e1e1e,
+  gold: #FFD700,
+  custom-red: #500a0a
+);
+
+@function random-color() {
+  $keys: map-keys($colors);
+  $random-key: nth($keys, random(length($keys)));
+  @return map-get($colors, $random-key);
+}
+
 .text-animate {
     display: inline-block;
     opacity: 0;
@@ -13,7 +26,7 @@
 
     &:hover {
         animation: rubberBand 1s;
-        color: yellow;
+        color: random-color();
     }
 }
 

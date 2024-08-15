@@ -11,7 +11,7 @@ const Home = () => {
     useEffect(() => {
         let interval;
         let iteration = 0;
-        const maxIterations = 20;
+        const maxIterations = 50;
 
         const scramble = () => {
             if (iteration >= maxIterations) {

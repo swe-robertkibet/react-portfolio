@@ -1,4 +1,17 @@
-$primary-color: #ffd700;
+:root {
+    --mainColor: rgb(172, 27, 27);
+    --hoverColor: rgb(202, 76, 76);
+    --backgroundColor: #1e1e1e;
+    --darkOne: #f3f3f3;
+    --darkTwo: #fff;
+    --lightOne: #ccc;
+    --lightTwo: #e7e3e3;
+    --mainHex: #ac1b1b;
+    --primaryContent: #f7cfcf;
+    --primaryDark: #6a1f1f;
+    --darkGrey: #4d4d4e;
+    --complementaryColor: #FFD700;
+}
 
 .home-page {
   .text-zone {
@@ -24,7 +37,7 @@ $primary-color: #ffd700;
     &::before {
       content: '<h1>';
       font-family: 'La Belle Aurore';
-      color: $primary-color;
+      color: var(--complementaryColor);
       font-size: 18px;
       position: absolute;
       margin-top: -40px;
@@ -35,7 +48,7 @@ $primary-color: #ffd700;
     &::after {
       content: '</h1>';
       font-family: 'La Belle Aurore';
-      color: $primary-color;
+      color: var(--complementaryColor);
       font-size: 18px;
       position: absolute;
       margin-top: 18px;
@@ -56,33 +69,34 @@ $primary-color: #ffd700;
   }
 
   .flat-button {
-    color: $primary-color;
+    color: var(--complementaryColor);
     font-size: 13px;
     font-weight: 400;
     letter-spacing: 4px;
     font-family: sans-serif;
     text-decoration: none;
     padding: 10px 18px;
-    border: 1px solid $primary-color;
+    border: 1px solid var(--complementaryColor);
     margin-top: 25px;
     float: left;
     animation: fadeIn 1s 1.8s backwards;
     white-space: nowrap;
 
     &:hover {
-      background: $primary-color;
-      color: #333;
+      background: var(--complementaryColor);
+      color: var(--backgroundColor);
+      font-weight: 700;
     }
   }
 }
 
 .scramble-letter {
   display: inline-block;
-  color: #ccc;
+  color: var(--backgroundColor);
   animation: fadeIn 0.5s forwards;
 
   &.highlight-letter {
-    color: $primary-color;
+    color: var(--backgroundColor);
   }
 }
 
