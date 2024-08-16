@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 
 const Home = () => {
     const [displayedName, setDisplayedName] = useState('');
+    const [letterClass, setLetterClass] = useState('text-animate');
+    const animationRef = useRef(false);
+    const intervalRef = useRef(null);
     const finalName = 'RobertKibet';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const jobArray = ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r', '.'];
 
     useEffect(() => {
         let interval;
@@ -43,37 +47,74 @@ const Home = () => {
         };
     }, []);
 
-    const [letterClass, setLetterClass] = useState('text-animate')
-    const jobArray = ['S', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'E', 'n', 'g', 'i', 'n', 'e', 'e', 'r', '.']
-
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setLetterClass('text-animate-hover')
-        }, 4000)
+            setLetterClass('text-animate-hover');
+            animationRef.current = true;
+        }, 4000);
 
-        return () => clearTimeout(timeout);
-    }, [])
+        const startRubberBandEffect = () => {
+            const applyRandomRubberBand = () => {
+                if (!animationRef.current) return;
 
-    useEffect(() => {
-        const applyRandomRubberBand = () => {
-            const letters = document.querySelectorAll('.text-animate-hover');
-            const randomIndex = Math.floor(Math.random() * letters.length);
-            letters[randomIndex].classList.add('rubberBand');
-            letters[randomIndex].style.color = 'var(--complementaryColor)';
-            setTimeout(() => {
-                letters[randomIndex].classList.remove('rubberBand');
-                letters[randomIndex].style.color = '';
-            }, 1000);
+                const letters = document.querySelectorAll('.text-animate-hover');
+                if (letters.length === 0) return;
+
+                const randomIndex = Math.floor(Math.random() * letters.length);
+                const randomLetter = letters[randomIndex];
+
+                if (randomLetter && randomLetter.classList) {
+                    randomLetter.classList.add('rubberBand');
+                    setTimeout(() => {
+                        randomLetter.classList.remove('rubberBand');
+                    }, 1000);
+                }
+            };
+
+            intervalRef.current = setInterval(applyRandomRubberBand, 3000);
         };
 
-        const interval = setInterval(applyRandomRubberBand, 3000);
+        // Start the rubberband effect after 5 seconds
+        const rubberBandTimeout = setTimeout(startRubberBandEffect, 5000);
 
-        return () => clearInterval(interval);
+        return () => {
+            clearTimeout(timeout);
+            clearTimeout(rubberBandTimeout);
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+            }
+        };
     }, []);
+
+    const handleMouseEnter = () => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (!intervalRef.current) {
+            intervalRef.current = setInterval(() => {
+                const letters = document.querySelectorAll('.text-animate-hover');
+                if (letters.length === 0) return;
+
+                const randomIndex = Math.floor(Math.random() * letters.length);
+                const randomLetter = letters[randomIndex];
+
+                if (randomLetter && randomLetter.classList) {
+                    randomLetter.classList.add('rubberBand');
+                    setTimeout(() => {
+                        randomLetter.classList.remove('rubberBand');
+                    }, 1000);
+                }
+            }, 3000);
+        }
+    };
 
     return (
         <div className="container home-page">
-            <div className="text-zone">
+            <div className="text-zone" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <h1>
                     <span className={letterClass}>H</span>
                     <span className={`${letterClass} _12`}>i,</span>
