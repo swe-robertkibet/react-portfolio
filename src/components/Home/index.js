@@ -54,6 +54,23 @@ const Home = () => {
         return () => clearTimeout(timeout);
     }, [])
 
+    useEffect(() => {
+        const applyRandomRubberBand = () => {
+            const letters = document.querySelectorAll('.text-animate-hover');
+            const randomIndex = Math.floor(Math.random() * letters.length);
+            letters[randomIndex].classList.add('rubberBand');
+            letters[randomIndex].style.color = '#FFD700';
+            setTimeout(() => {
+                letters[randomIndex].classList.remove('rubberBand');
+                letters[randomIndex].style.color = '';
+            }, 1000);
+        };
+
+        const interval = setInterval(applyRandomRubberBand, 3000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="container home-page">
             <div className="text-zone">
