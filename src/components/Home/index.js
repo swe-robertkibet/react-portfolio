@@ -59,7 +59,7 @@ const Home = () => {
             const letters = document.querySelectorAll('.text-animate-hover');
             const randomIndex = Math.floor(Math.random() * letters.length);
             letters[randomIndex].classList.add('rubberBand');
-            letters[randomIndex].style.color = '#FFD700';
+            letters[randomIndex].style.color = 'var(--complementaryColor)';
             setTimeout(() => {
                 letters[randomIndex].classList.remove('rubberBand');
                 letters[randomIndex].style.color = '';

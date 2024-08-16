@@ -1,67 +1,65 @@
-$colors: (
-  yellow: yellow,
-  dark-gray: #1e1e1e,
-  gold: #FFD700,
-  custom-red: #500a0a
-);
-
-@function random-color() {
-  $keys: map-keys($colors);
-  $random-key: nth($keys, random(length($keys)));
-  @return map-get($colors, $random-key);
-}
-
-.text-animate {
-    display: inline-block;
-    opacity: 0;
-    animation: bounceIn 1s 1s;
-    animation-fill-mode: forwards;
-    min-width: 10px;
-}
-
-.text-animate-hover {
-    min-width: 10px;
-    display: inline-block;
-    animation-fill-mode: both;
-
-    &:hover {
-        animation: rubberBand 1s;
-        color: random-color();
+:root {
+    --mainColor: rgb(172, 27, 27);
+    --hoverColor: rgb(202, 76, 76);
+    --backgroundColor: #1e1e1e;
+    --darkOne: #f3f3f3;
+    --darkTwo: #fff;
+    --lightOne: #ccc;
+    --lightTwo: #e7e3e3;
+    --mainHex: #ac1b1b;
+    --primaryContent: #f7cfcf;
+    --primaryDark: #6a1f1f;
+    --darkGrey: #4d4d4e;
+    --complementaryColor: #FFD700;
+  }
+  
+  .text-animate {
+      display: inline-block;
+      opacity: 0;
+      animation: bounceIn 1s 1s;
+      animation-fill-mode: forwards;
+      min-width: 10px;
+  }
+  
+  .text-animate-hover {
+      min-width: 10px;
+      display: inline-block;
+      animation-fill-mode: both;
+  
+      &:hover {
+          animation: rubberBand 1s;
+          color: var(--complementaryColor);
+      }
+  }
+  
+  @for $i from 1 through 39 {
+      .text-animate._#{$i} {
+          animation-delay: #{$i / 10}s;
+      }
+  }
+  
+  @keyframes rubberBand {
+    from, to {
+      transform: scale3d(1, 1, 1);
     }
-}
-
-@for $i from 1 through 39 {
-    .text-animate._#{$i} {
-        animation-delay: #{$i / 10}s;
+  
+    30% {
+      transform: scale3d(1.25, 0.75, 1);
     }
-}
-
-@keyframes rubberBand {
-  from {
-    transform: scale3d(1, 1, 1);
+  
+    40% {
+      transform: scale3d(0.75, 1.25, 1);
+    }
+  
+    50% {
+      transform: scale3d(1.15, 0.85, 1);
+    }
+  
+    65% {
+      transform: scale3d(0.95, 1.05, 1);
+    }
+  
+    75% {
+      transform: scale3d(1.05, 0.95, 1);
+    }
   }
-
-  30% {
-    transform: scale3d(1.25, 0.75, 1);
-  }
-
-  40% {
-    transform: scale3d(0.75, 1.25, 1);
-  }
-
-  50% {
-    transform: scale3d(1.15, 0.85, 1);
-  }
-
-  65% {
-    transform: scale3d(0.95, 1.05, 1);
-  }
-
-  75% {
-    transform: scale3d(1.05, 0.95, 1);
-  }
-
-  to {
-    transform: scale3d(1, 1, 1);
-  }
-}
