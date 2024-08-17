@@ -103,4 +103,11 @@
         }
       }
     }
+
+    .text-animate-hover {
+      &:hover {
+        color: #fff;
+        cursor: crosshair;
+      }
+    }
   }
