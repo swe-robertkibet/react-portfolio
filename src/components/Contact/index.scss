@@ -45,6 +45,13 @@
                 margin-left: 0;
             }
         }
+
+        li.submit-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 50px;
+        }
     }
 
     input[type='text'],
@@ -88,20 +95,47 @@
             color: var(--complementaryColor);
             border: 1px solid var(--backgroundColor);
         }
+    }
 
+    .spinner {
+        width: 30px;
+        height: 30px;
+        border: 3px solid var(--complementaryColor);
+        border-top: 3px solid var(--backgroundColor);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .message {
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: bold;
+
+        &.success {
+            color: var(--complementaryColor);
+        }
+
+        &.error {
+            color: var(--complementaryColor);
+        }
     }
 
     ::placeholder {
         color: var(--lightOne);
         opacity: 1;
-      }
+    }
       
-      :-ms-input-placeholder {
+    :-ms-input-placeholder {
         color: var(--lightOne);
-      }
+    }
       
-      ::-ms-input-placeholder {
+    ::-ms-input-placeholder {
         color: var(--lightOne);
-      }
-      
+    }
 }
