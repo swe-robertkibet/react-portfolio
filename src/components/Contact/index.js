@@ -42,11 +42,15 @@ const Contact = () => {
                                 </li>
 
                                 <li>
-                                    <input placeholder='Subject' type='subject' name='subject' required />
+                                    <input placeholder='Subject' type='text' name='subject' required />
                                 </li>
 
                                 <li>
-                                    <textarea placeholder='Message' name='message' required> </textarea>
+                                    <textarea
+                                        placeholder="Message"
+                                        name="message"
+                                        required
+                                    ></textarea>
                                 </li>
 
                                 <li>

@@ -1,3 +1,18 @@
+:root {
+    --mainColor: rgb(172, 27, 27);
+    --hoverColor: rgb(202, 76, 76);
+    --backgroundColor: #1e1e1e;
+    --darkOne: #f3f3f3;
+    --darkTwo: #fff;
+    --lightOne: #ccc;
+    --lightTwo: #e7e3e3;
+    --mainHex: #ac1b1b;
+    --primaryContent: #f7cfcf;
+    --primaryDark: #6a1f1f;
+    --darkGrey: #4d4d4e;
+    --complementaryColor: #FFD700;
+  }
+
 .contact-form {
     width: 100%;
     margin-top: 20px;
@@ -17,6 +32,76 @@
             opacity: 0;
             animation: fadeInUp 2s 2s;
             animation-fill-mode: forwards;
+            clear: both;
+        }
+
+        li.half {
+            width: 49%;
+            margin-left: 2%;
+            float: left;
+            clear: none;
+
+            &:first-child {
+                margin-left: 0;
+            }
         }
     }
+
+    input[type='text'],
+    input[type='email'] {
+        width: 100%;
+        border: 0;
+        background: var(--backgroundColor);
+        height: 50px;
+        color: var(--lightOne);
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    textarea {
+        width: 100%;
+        border: 0;
+        background: var(--backgroundColor);
+        height: 50px;
+        font-style: 16px;
+        color: var(--lightOne);
+        padding: 20px;
+        min-height: 150px;
+        box-sizing: border-box;
+    }
+
+    .flat-button {
+        color: var(--complementaryColor);
+        background: 0 0;
+        font: 11px;
+        letter-spacing: 3px;
+        text-decoration: none;
+        padding: 8px 10px;
+        border: 1px solid var(--complementaryColor);
+        border-radius: 4px;
+        float: right;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background: var(--backgroundColor);
+            color: var(--complementaryColor);
+            border: 1px solid var(--backgroundColor);
+        }
+
+    }
+
+    ::placeholder {
+        color: var(--lightOne);
+        opacity: 1;
+      }
+      
+      :-ms-input-placeholder {
+        color: var(--lightOne);
+      }
+      
+      ::-ms-input-placeholder {
+        color: var(--lightOne);
+      }
+      
 }

@@ -1,3 +1,18 @@
+:root {
+  --mainColor: rgb(172, 27, 27);
+  --hoverColor: rgb(202, 76, 76);
+  --backgroundColor: #1e1e1e;
+  --darkOne: #f3f3f3;
+  --darkTwo: #fff;
+  --lightOne: #ccc;
+  --lightTwo: #e7e3e3;
+  --mainHex: #ac1b1b;
+  --primaryContent: #f7cfcf;
+  --primaryDark: #6a1f1f;
+  --darkGrey: #4d4d4e;
+  --complementaryColor: #FFD700;
+}
+
 .page {
     width: 100%;
     height: 100%;
@@ -10,7 +25,7 @@
   }
   
   .tags {
-    color: #ffd700;
+    color: var(--complementaryColor);
     opacity: 0.6;
     position: absolute;
     bottom: 0;
@@ -54,7 +69,7 @@
       h1 {
         font-size: 53px;
         font-family: 'Coolvetica';
-        color: #ffd700;
+        color: var(--complementaryColor);
         font-weight: 400;
         margin-top: 0;
         position: relative;
@@ -64,7 +79,7 @@
         &:before {
           content: '<h1>';
           font-family: 'La Belle Aurore', cursive;
-          color: #ffd700;
+          color: var(--complementaryColor);
           font-size: 18px;
           position: absolute;
           margin-top: -10px;
@@ -76,7 +91,7 @@
         &:after {
           content: '<h1/>';
           font-family: 'La Belle Aurore', cursive;
-          color: #ffd700;
+          color: var(--complementaryColor);
           font-size: 18px;
           line-height: 18px;
           position: absolute;
@@ -89,7 +104,7 @@
   
       p {
         font-size: 13px;
-        color: #fff;
+        color: var(--lightOne);
         font-family: sans-serif;
         font-weight: 300;
         max-width: fit-content;
@@ -108,7 +123,7 @@
 
     .text-animate-hover {
       &:hover {
-        color: #fff;
+        color: var(--lightOne);
         cursor: crosshair;
       }
     }
