@@ -6,7 +6,6 @@ import {
     faHome,
     faUser,
     faEnvelope,
-    faSuitcase,
     faBars,
     faClose,
     faLaptopCode
