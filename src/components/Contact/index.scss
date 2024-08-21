@@ -11,7 +11,7 @@
     --primaryDark: #6a1f1f;
     --darkGrey: #4d4d4e;
     --complementaryColor: #FFD700;
-  }
+}
 
 .contact-form {
     width: 100%;
@@ -63,6 +63,7 @@
         color: var(--lightOne);
         padding: 0 20px;
         box-sizing: border-box;
+        font-size: 16px;
     }
 
     textarea {
@@ -70,7 +71,7 @@
         border: 0;
         background: var(--backgroundColor);
         height: 50px;
-        font-style: 16px;
+        font-size: 16px;
         color: var(--lightOne);
         padding: 20px;
         min-height: 150px;
@@ -140,27 +141,24 @@
     }
 }
 
-
-
 @media screen and (max-width: 1200px) {
-  
     .tags,
     .contact-page h1:before,
     .contact-page h1:after {
-      display: none;
+        display: none;
     }
     
     .contact-page {
-      .text-zone {
-        position: initial;
-        width: 100%;
-        transform: none;
-        padding: 10px;
-        box-sizing: border-box;
-      }
-  
-      h1 {
-        font-size: 30px;
-      }
+        .text-zone {
+            position: initial;
+            width: 100%;
+            transform: none;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
     }
-  }
+}

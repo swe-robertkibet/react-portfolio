@@ -60,16 +60,16 @@ const Contact = () => {
                         <form ref={form} onSubmit={sendEmail}>
                             <ul>
                                 <li className='half'>
-                                    <input type='text' name='name' placeholder='Name' required />
+                                    <input type='text' name='name' placeholder='Name' required style={{ fontSize: '16px' }} />
                                 </li>
                                 <li className='half'>
-                                    <input type='email' name='email' placeholder='Email' required />
+                                    <input type='email' name='email' placeholder='Email' required style={{ fontSize: '16px' }} />
                                 </li>
                                 <li>
-                                    <input placeholder='Subject' type='text' name='subject' required />
+                                    <input placeholder='Subject' type='text' name='subject' required style={{ fontSize: '16px' }} />
                                 </li>
                                 <li>
-                                    <textarea placeholder="Message" name="message" required></textarea>
+                                    <textarea placeholder="Message" name="message" required style={{ fontSize: '16px' }}></textarea>
                                 </li>
                                 <li className='submit-container'>
                                     {!loading && !message.text && (
