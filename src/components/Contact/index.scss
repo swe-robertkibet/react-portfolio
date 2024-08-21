@@ -139,3 +139,28 @@
         color: var(--lightOne);
     }
 }
+
+
+
+@media screen and (max-width: 1200px) {
+  
+    .tags,
+    .contact-page h1:before,
+    .contact-page h1:after {
+      display: none;
+    }
+    
+    .contact-page {
+      .text-zone {
+        position: initial;
+        width: 100%;
+        transform: none;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+  
+      h1 {
+        font-size: 30px;
+      }
+    }
+  }
