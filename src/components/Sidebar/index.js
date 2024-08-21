@@ -23,8 +23,10 @@ const Sidebar = () => {
                 className="logo"
                 to="/"
                 onClick={() => setShowNav(false)}>
-                <img src={Logo} alt="Logo" />
-                {/* <p className='logo-subtitle'>Robert Kibet</p> */}
+                <svg width="45" height="45">
+                    <circle cx="22.5" cy="22.5" r="18" fill="transparent" stroke="#333" strokeWidth="1" />
+                    <text x="22.5" y="27.5" fontSize="18" fontFamily="'Helvetica Neue'" fill="#fff" textAnchor="middle">RK</text>
+                </svg>
             </Link>
             <nav className={showNav ? 'mobile-show' : ''}>
                 <NavLink
