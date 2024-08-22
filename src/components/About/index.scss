@@ -1,22 +1,22 @@
-// @media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   
-//   .tags,
-//   .about-page h1:before,
-//   .about-page h1:after {
-//     display: none;
-//   }
+  .tags,
+  .about-page h1:before,
+  .about-page h1:after {
+    display: none;
+  }
   
-//   .about-page {
-//     .text-zone {
-//       position: initial;
-//       width: 100%;
-//       transform: none;
-//       padding: 10px;
-//       box-sizing: border-box;
-//     }
+  .about-page {
+    .text-zone {
+      position: initial;
+      width: 100%;
+      transform: none;
+      padding: 10px;
+      box-sizing: border-box;
+    }
 
-//     h1 {
-//       font-size: 40px;
-//     }
-//   }
-// }
+    h1 {
+      font-size: 40px;
+    }
+  }
+}
