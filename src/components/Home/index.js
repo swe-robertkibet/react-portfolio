@@ -18,6 +18,8 @@ const Home = () => {
         let iteration = 0;
         const maxIterations = 50;
 
+        document.body.style.overflow = 'hidden';
+
         const scramble = () => {
             if (iteration >= maxIterations) {
                 setDisplayedName(finalName);

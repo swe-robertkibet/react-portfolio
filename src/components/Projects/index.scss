@@ -69,13 +69,14 @@
 }
 
 @media screen and (max-width: 1200px) {
-    
-  
-  .tags,
-  .projects-page h1:before,
-  .projects-page h1:after {
-    display: none;
-  }
+
+
+    .tags,
+    .projects-page h1:before,
+    .projects-page h1:after {
+        display: none;
+    }
+
     .projects-page {
         height: auto;
         overflow: auto;
