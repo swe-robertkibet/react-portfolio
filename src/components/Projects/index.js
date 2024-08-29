@@ -2,6 +2,8 @@ import Loader from 'react-loaders'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useState, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -18,14 +20,28 @@ const Projects = () => {
         return () => clearTimeout(timer);
     }, [])
 
-    const rotateCards = () => {
-        if (!isHovering) {
-            setFocusedCardIndex((prevIndex) => (prevIndex + 1) % projects.length);
-        }
+    const rotateCards = (direction) => {
+        setFocusedCardIndex((prevIndex) => {
+            const newIndex = (prevIndex + direction + projects.length) % projects.length;
+            return newIndex;
+        });
     };
 
     useEffect(() => {
-        rotationIntervalRef.current = setInterval(rotateCards, 3000);
+        const startRotation = () => {
+            rotationIntervalRef.current = setInterval(() => rotateCards(1), 5000);
+        };
+
+        const stopRotation = () => {
+            clearInterval(rotationIntervalRef.current);
+        };
+
+        if (isHovering) {
+            stopRotation();
+        } else {
+            startRotation();
+        }
+
         return () => clearInterval(rotationIntervalRef.current);
     }, [isHovering]);
 
@@ -57,7 +73,10 @@ const Projects = () => {
         updateCardPositions();
 
         window.addEventListener('resize', updateCardPositions);
-        return () => window.removeEventListener('resize', updateCardPositions);
+
+        return () => {
+            window.removeEventListener('resize', updateCardPositions);
+        };
     }, [focusedCardIndex]);
 
     const projects = [
@@ -124,6 +143,15 @@ const Projects = () => {
                             </div>
                         </div>
                     ))}
+
+                    <div className="navigation-buttons">
+                        <button onClick={() => rotateCards(-1)} className="nav-button up">
+                            <FontAwesomeIcon icon={faChevronUp} />
+                        </button>
+                        <button onClick={() => rotateCards(1)} className="nav-button down">
+                            <FontAwesomeIcon icon={faChevronDown} />
+                        </button>
+                    </div>
                 </div>
             </div>
             <Loader type='pacman' />
