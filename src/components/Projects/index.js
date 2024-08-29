@@ -66,7 +66,8 @@ const Projects = () => {
                 card.style.transform = `translateY(${y}px) translateZ(${z}px) scale(${scale})`;
                 card.style.opacity = opacity;
                 card.style.filter = `blur(${blur}px)`;
-                card.style.zIndex = index === focusedCardIndex ? 1 : 0;
+                card.style.zIndex = index === focusedCardIndex ? 2 : 1;
+                card.style.pointerEvents = index === focusedCardIndex ? 'auto' : 'none';
             });
         };
 
@@ -129,6 +130,14 @@ const Projects = () => {
                     onMouseEnter={() => setIsHovering(true)}
                     onMouseLeave={() => setIsHovering(false)}
                 >
+                    <div className="navigation-buttons">
+                        <button onClick={() => rotateCards(-1)} className="nav-button up">
+                            <FontAwesomeIcon icon={faChevronUp} />
+                        </button>
+                        <button onClick={() => rotateCards(1)} className="nav-button down">
+                            <FontAwesomeIcon icon={faChevronDown} />
+                        </button>
+                    </div>
                     {projects.map((project, index) => (
                         <div className='project-card' key={index}>
                             <h3>{project.title}</h3>
@@ -143,15 +152,6 @@ const Projects = () => {
                             </div>
                         </div>
                     ))}
-
-                    <div className="navigation-buttons">
-                        <button onClick={() => rotateCards(-1)} className="nav-button up">
-                            <FontAwesomeIcon icon={faChevronUp} />
-                        </button>
-                        <button onClick={() => rotateCards(1)} className="nav-button down">
-                            <FontAwesomeIcon icon={faChevronDown} />
-                        </button>
-                    </div>
                 </div>
             </div>
             <Loader type='pacman' />
