@@ -9,8 +9,10 @@ const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
     const [focusedCardIndex, setFocusedCardIndex] = useState(0);
     const [isHovering, setIsHovering] = useState(false);
+    const [isManualRotation, setIsManualRotation] = useState(false);
     const containerRef = useRef(null);
     const rotationIntervalRef = useRef(null);
+    const manualRotationTimeoutRef = useRef(null);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -27,6 +29,15 @@ const Projects = () => {
         });
     };
 
+    const handleManualRotation = (direction) => {
+        rotateCards(direction);
+        setIsManualRotation(true);
+        clearTimeout(manualRotationTimeoutRef.current);
+        manualRotationTimeoutRef.current = setTimeout(() => {
+            setIsManualRotation(false);
+        }, 10000);
+    };
+
     useEffect(() => {
         const startRotation = () => {
             rotationIntervalRef.current = setInterval(() => rotateCards(1), 5000);
@@ -36,14 +47,17 @@ const Projects = () => {
             clearInterval(rotationIntervalRef.current);
         };
 
-        if (isHovering) {
+        if (isHovering || isManualRotation) {
             stopRotation();
         } else {
             startRotation();
         }
 
-        return () => clearInterval(rotationIntervalRef.current);
-    }, [isHovering]);
+        return () => {
+            clearInterval(rotationIntervalRef.current);
+            clearTimeout(manualRotationTimeoutRef.current);
+        };
+    }, [isHovering, isManualRotation]);
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -131,10 +145,10 @@ const Projects = () => {
                     onMouseLeave={() => setIsHovering(false)}
                 >
                     <div className="navigation-buttons">
-                        <button onClick={() => rotateCards(-1)} className="nav-button up">
+                        <button onClick={() => handleManualRotation(-1)} className="nav-button up">
                             <FontAwesomeIcon icon={faChevronUp} />
                         </button>
-                        <button onClick={() => rotateCards(1)} className="nav-button down">
+                        <button onClick={() => handleManualRotation(1)} className="nav-button down">
                             <FontAwesomeIcon icon={faChevronDown} />
                         </button>
                     </div>
