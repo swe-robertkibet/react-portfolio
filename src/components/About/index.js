@@ -32,9 +32,9 @@ const About = () => {
                         <AnimatedLetters letterClass={letterClass} strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']} idx={15} />
                     </h1>
 
-                    <p>I'm a Software Engineer with over 1.5 years of experience in Node.js backend development. I'm passionate about creating efficient and innovative solutions using a variety of technologies.</p>
-                    <p>My technical skills include Node.js, Express.js, EJS, CSS, Git version control, and CI/CD Pipeline. I'm also proficient in problem-solving, communication, adaptability, and time management.</p>
-                    <p>I'm currently pursuing a Bachelor of Science in Information Technology at Mount Kenya University, expected to graduate in 2025. I'm always eager to learn and take on new challenges in the field of software engineering.</p>
+                    <p>I am a passionate Software Engineer with over 2 years of experience. My journey in technology began with a deep curiosity about how things work, which naturally evolved into a love for programming and software development.</p>
+                    <p>Throughout my career, I have had the opportunity to work on various projects that have challenged and honed my skills. From developing a comprehensive web application that integrates user authentication and payment processing to creating innovative solutions like a Process Scheduling Simulator and a Gaming PC Builder tool, I have demonstrated my ability to tackle complex problems and deliver impactful results.</p>
+                    <p>Beyond my technical skills, I am a strong advocate for continuous learning and knowledge sharing. I am always eager to take on new challenges and look forward to contributing my skills and passion to exciting software engineering roles.</p>
 
                 </div>
 
