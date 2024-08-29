@@ -14,16 +14,31 @@
 }
 
 .home-page {
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 10%;
+  }
+
   .text-zone {
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40%;
-    max-height: 90%;
+    width: 50%;
+    max-width: 600px;
 
     &:hover {
       cursor: crosshair;
+    }
+  }
+
+  .svg-container {
+    width: 40%;
+    max-width: 400px;
+    
+    svg {
+      width: 100%;
+      height: auto;
     }
   }
 
@@ -143,24 +158,53 @@
 }
 
 @media screen and (max-width: 1200px) {
-  
   .tags,
   .home-page h1:before,
   .home-page h1:after {
     display: none;
   }
-  
+
   .home-page {
+    .content-wrapper {
+      flex-direction: column;
+      padding: 20px;
+      height: auto;
+    }
+
     .text-zone {
-      position: initial;
       width: 100%;
-      transform: none;
-      padding: 10px;
-      box-sizing: border-box;
+      max-width: none;
+      margin-bottom: 40px;
+    }
+
+    .svg-container {
+      width: 80%;
+      max-width: 300px;
+      margin: 0 auto;
     }
 
     h1 {
       font-size: 40px;
+    }
+
+    .flat-button {
+      float: none;
+      display: block;
+      margin: 20px auto 0;
+      width: 180px;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home-page {
+    h1 {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 9px;
     }
   }
 }
