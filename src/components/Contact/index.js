@@ -53,7 +53,7 @@ const Contact = () => {
                         <AnimatedLetters letterClass={letterClass} strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']} idx={15} />
                     </h1>
                     <p>
-                        I am always open to new opportunities and collaborations. Whether you have a project in mind, a job opportunity, or just want to connect, I'd love to hear from you. Reach out to me at kurgatroba@gmail.com or find me on LinkedIn. Let's create something great together!
+                        I am always open to new opportunities and collaborations. Whether you have a project in mind, a job opportunity, or just want to connect, I'd love to hear from you. Reach out to me at kurgatroba@gmail.com. Let's create something great together!
                     </p>
 
                     <div className='contact-form'>
