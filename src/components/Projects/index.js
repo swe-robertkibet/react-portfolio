@@ -3,7 +3,7 @@ import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronUp, faChevronDown, faExternalLinkAlt, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp, faChevronDown, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Projects = () => {
@@ -104,7 +104,7 @@ const Projects = () => {
         },
         {
             title: 'Project 2',
-            description: 'Description of Project 2',
+            description: 'Color Theme Generator is a React app that helps users create color schemes for their projects. By choosing a primary color, the app generates palettes with matching colors that are both accessible and visually appealing.',
             liveLink: 'https://project2.com',
             githubLink: 'https://github.com/yourusername/project2'
         },
@@ -156,7 +156,9 @@ const Projects = () => {
                     {projects.map((project, index) => (
                         <div className='project-card' key={index}>
                             <h3>{project.title}</h3>
-                            <p>{project.description}</p>
+                            <div className="project-description" style={{ flex: 1 }}>
+                                <p>{project.description}</p>
+                            </div>
                             <div className="project-links">
                                 {project.liveLink && (
                                     <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
