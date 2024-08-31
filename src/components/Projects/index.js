@@ -83,6 +83,11 @@ const Projects = () => {
                 card.style.filter = `blur(${blur}px)`;
                 card.style.zIndex = index === focusedCardIndex ? 2 : 1;
                 card.style.pointerEvents = index === focusedCardIndex ? 'auto' : 'none';
+
+                // Remove blur for focused card on smaller screens
+                if (window.innerWidth <= 768 && index === focusedCardIndex) {
+                    card.style.filter = 'blur(0px)';
+                }
             });
         };
 

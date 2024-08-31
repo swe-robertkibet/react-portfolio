@@ -161,6 +161,11 @@
                     font-size: 12px;
                 }
             }
+
+            // Ensure focused card is always clear on smaller screens
+            &:nth-child(1) {
+                filter: blur(0px) !important;
+            }
         }
 
         .navigation-buttons {
