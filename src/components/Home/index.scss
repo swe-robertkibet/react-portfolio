@@ -50,13 +50,14 @@
     font-weight: 400;
 
     &::before {
-      content: '<h1>';
+      content: '</h1>';
       font-family: 'La Belle Aurore';
       color: var(--complementaryColor);
       font-size: 18px;
       position: absolute;
-      margin-top: -40px;
-      left: 15px;
+      margin-top: -20px;
+      margin-left: 0px;
+      animation: fadeIn 1s 1.7s backwards;
       opacity: 0.6;
     }
 
@@ -66,7 +67,7 @@
       color: var(--complementaryColor);
       font-size: 18px;
       position: absolute;
-      margin-top: 18px;
+      margin-top: 30px;
       margin-left: 20px;
       animation: fadeIn 1s 1.7s backwards;
       opacity: 0.6;
