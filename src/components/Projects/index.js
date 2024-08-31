@@ -3,7 +3,8 @@ import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp, faChevronDown, faExternalLinkAlt, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -157,12 +158,16 @@ const Projects = () => {
                             <h3>{project.title}</h3>
                             <p>{project.description}</p>
                             <div className="project-links">
-                                <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                                    <i className="fas fa-external-link-alt"></i> Live
-                                </a>
-                                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                                    <i className="fab fa-github"></i> GitHub
-                                </a>
+                                {project.liveLink && (
+                                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                                        <FontAwesomeIcon icon={faGlobe} />
+                                    </a>
+                                )}
+                                {project.githubLink && (
+                                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                                        <FontAwesomeIcon icon={faGithub} />
+                                    </a>
+                                )}
                             </div>
                         </div>
                     ))}
