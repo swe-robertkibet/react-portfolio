@@ -97,34 +97,40 @@ const Projects = () => {
 
     const projects = [
         {
-            title: 'Project 1',
-            description: 'Description of Project 1',
-            liveLink: 'https://project1.com',
-            githubLink: 'https://github.com/yourusername/project1'
+            title: 'Logic Gate Simulator',
+            description: 'React app that simulates basic logic gates (AND, OR, NOT, NAND, NOR). Users can input binary values and see the output of different gates.',
+            liveLink: 'https://logicsim.robertkibet.com/',
+            githubLink: 'https://github.com/swe-robertkibet/logic-gate-simulator'
         },
         {
-            title: 'Project 2',
-            description: 'Color Theme Generator is a React app that helps users create color schemes for their projects. By choosing a primary color, the app generates palettes with matching colors that are both accessible and visually appealing.',
-            liveLink: 'https://project2.com',
-            githubLink: 'https://github.com/yourusername/project2'
+            title: 'Color Theme Generator',
+            description: ' A react app that helps users create color schemes for their projects. By choosing a primary color, the app generates palettes with matching colors that are both accessible and visually appealing.',
+            liveLink: 'https://colorgen.robertkibet.com/',
+            githubLink: 'https://github.com/swe-robertkibet/react-color-theme-generator'
         },
         {
-            title: 'Project 3',
-            description: 'Description of Project 3',
-            liveLink: 'https://project3.com',
-            githubLink: 'https://github.com/yourusername/project3'
+            title: 'Process Scheduling Simulator',
+            description: 'It is a web-based tool designed to simulate and analyze CPU scheduling algorithms, with a focus on the Shortest Remaining Time (SRT) algorithm.',
+            liveLink: 'https://schedulesimulator.robertkibet.com/',
+            githubLink: 'https://github.com/swe-robertkibet/Process-Scheduling-Simulator'
         },
         {
-            title: 'Project 4',
-            description: 'Description of Project 4',
-            liveLink: 'https://project4.com',
-            githubLink: 'https://github.com/yourusername/project4'
+            title: 'Node Authentication System',
+            description: 'Allows users to sign up with unique usernames and emails, securely hashes passwords using bcrypt, and facilitates user login with robust validation checks.',
+            liveLink: '',
+            githubLink: 'https://github.com/swe-robertkibet/NodeJs-Authentication'
         },
         {
-            title: 'Project 5',
-            description: 'Description of Project 5',
-            liveLink: 'https://project5.com',
-            githubLink: 'https://github.com/yourusername/project5'
+            title: 'Java Inventory System',
+            description: 'It features client management, stock tracking, supplier management, sales processing, and reporting, with data stored in MongoDB and a user interface built using Java Swing.',
+            liveLink: '',
+            githubLink: 'https://github.com/swe-robertkibet/java-inventorysystem'
+        },
+        {
+            title: 'Java Geometry Visualizer',
+            description: 'A Java Swing application for creating and customizing basic geometric shapes with real-time preview and color selection.',
+            liveLink: '',
+            githubLink: 'https://github.com/swe-robertkibet/java-geometry-visualizer'
         },
     ];
 
