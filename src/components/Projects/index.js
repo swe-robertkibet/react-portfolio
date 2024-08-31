@@ -23,12 +23,51 @@ const Projects = () => {
         return () => clearTimeout(timer);
     }, [])
 
+    const projects = [
+        {
+            title: 'Logic Gate Simulator',
+            description: 'React app that simulates basic logic gates (AND, OR, NOT, NAND, NOR). Users can input binary values and see the output of different gates.',
+            liveLink: 'https://logicsim.robertkibet.com/',
+            githubLink: 'https://github.com/swe-robertkibet/logic-gate-simulator'
+        },
+        {
+            title: 'Color Theme Generator',
+            description: ' A react app that helps users create color schemes for their projects. By choosing a primary color, the app generates palettes with matching colors that are both accessible and visually appealing.',
+            liveLink: 'https://colorgen.robertkibet.com/',
+            githubLink: 'https://github.com/swe-robertkibet/react-color-theme-generator'
+        },
+        {
+            title: 'Process Scheduling Simulator',
+            description: 'It is a web-based tool designed to simulate and analyze CPU scheduling algorithms, with a focus on the Shortest Remaining Time (SRT) algorithm.',
+            liveLink: 'https://schedulesimulator.robertkibet.com/',
+            githubLink: 'https://github.com/swe-robertkibet/Process-Scheduling-Simulator'
+        },
+        {
+            title: 'Node Authentication System',
+            description: 'Allows users to sign up with unique usernames and emails, securely hashes passwords using bcrypt, and facilitates user login with robust validation checks.',
+            liveLink: '',
+            githubLink: 'https://github.com/swe-robertkibet/NodeJs-Authentication'
+        },
+        {
+            title: 'Java Inventory System',
+            description: 'It features client management, stock tracking, supplier management, sales processing, and reporting, with data stored in MongoDB and a user interface built using Java Swing.',
+            liveLink: '',
+            githubLink: 'https://github.com/swe-robertkibet/java-inventorysystem'
+        },
+        {
+            title: 'Java Geometry Visualizer',
+            description: 'A Java Swing application for creating and customizing basic geometric shapes with real-time preview and color selection.',
+            liveLink: '',
+            githubLink: 'https://github.com/swe-robertkibet/java-geometry-visualizer'
+        },
+    ];
+
     const rotateCards = useCallback((direction) => {
         setFocusedCardIndex((prevIndex) => {
             const newIndex = (prevIndex + direction + projects.length) % projects.length;
             return newIndex;
         });
-    }, []);
+    }, [projects.length]);
 
     const handleManualRotation = (direction) => {
         rotateCards(direction);
@@ -98,45 +137,6 @@ const Projects = () => {
             window.removeEventListener('resize', updateCardPositions);
         };
     }, [focusedCardIndex]);
-
-    const projects = [
-        {
-            title: 'Logic Gate Simulator',
-            description: 'React app that simulates basic logic gates (AND, OR, NOT, NAND, NOR). Users can input binary values and see the output of different gates.',
-            liveLink: 'https://logicsim.robertkibet.com/',
-            githubLink: 'https://github.com/swe-robertkibet/logic-gate-simulator'
-        },
-        {
-            title: 'Color Theme Generator',
-            description: ' A react app that helps users create color schemes for their projects. By choosing a primary color, the app generates palettes with matching colors that are both accessible and visually appealing.',
-            liveLink: 'https://colorgen.robertkibet.com/',
-            githubLink: 'https://github.com/swe-robertkibet/react-color-theme-generator'
-        },
-        {
-            title: 'Process Scheduling Simulator',
-            description: 'It is a web-based tool designed to simulate and analyze CPU scheduling algorithms, with a focus on the Shortest Remaining Time (SRT) algorithm.',
-            liveLink: 'https://schedulesimulator.robertkibet.com/',
-            githubLink: 'https://github.com/swe-robertkibet/Process-Scheduling-Simulator'
-        },
-        {
-            title: 'Node Authentication System',
-            description: 'Allows users to sign up with unique usernames and emails, securely hashes passwords using bcrypt, and facilitates user login with robust validation checks.',
-            liveLink: '',
-            githubLink: 'https://github.com/swe-robertkibet/NodeJs-Authentication'
-        },
-        {
-            title: 'Java Inventory System',
-            description: 'It features client management, stock tracking, supplier management, sales processing, and reporting, with data stored in MongoDB and a user interface built using Java Swing.',
-            liveLink: '',
-            githubLink: 'https://github.com/swe-robertkibet/java-inventorysystem'
-        },
-        {
-            title: 'Java Geometry Visualizer',
-            description: 'A Java Swing application for creating and customizing basic geometric shapes with real-time preview and color selection.',
-            liveLink: '',
-            githubLink: 'https://github.com/swe-robertkibet/java-geometry-visualizer'
-        },
-    ];
 
     return (
         <>
