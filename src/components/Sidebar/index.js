@@ -1,6 +1,5 @@
 import './index.scss'
 import { useState } from 'react'
-import Logo from '../../assets/images/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faHome,
@@ -12,7 +11,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin, faWhatsapp, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 import { Link, NavLink } from 'react-router-dom'
-
 
 const Sidebar = () => {
     const [showNav, setShowNav] = useState(false);
@@ -83,7 +81,7 @@ const Sidebar = () => {
                     </a>
                 </li>
                 <li>
-                    <a target='_blank' rel='noreferrer' href=''>
+                    <a target='_blank' rel='noreferrer' href='https://twitter.com/swe_robertkibet'>
                         <FontAwesomeIcon icon={faXTwitter} />
                     </a>
                 </li>
