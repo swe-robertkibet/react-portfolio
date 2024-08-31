@@ -147,7 +147,7 @@ const Home = () => {
                         <Link to="/contact" className="flat-button">CONTACT ME</Link>
                     </div>
                     <div className="svg-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" width="978" height="813.6343" viewBox="0 0 978 813.6343"><title>circuit</title>
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" width="978" height="813.6343" viewBox="0 0 978 813.6343"><title>Hero Image</title>
                             <path d="M459.52874,779.69641l-1.87485,26.24794v14.99882s-3.74971,39.3719,31.87249,35.62219,5.62455-59.99528,5.62455-59.99528l-3.7497-11.24911Z" transform="translate(-111 -43.18285)" fill="#1e1e1e" />
                             <path d="M506.40005,721.576s-11.24912,3.7497-7.49941,28.12279c0,0,9.37426,7.4994,18.74852,11.24911a31.599,31.599,0,0,1,9.50867,6.44072A73.48525,73.48525,0,0,0,562.05589,785.985c8.88925,1.89373,17.05328,1.67952,19.33825-4.41375,5.62456-14.99882-22.49823-28.12279-22.49823-28.12279L536.39769,729.0754Z" transform="translate(-111 -43.18285)" fill="#1e1e1e" />
                             <path d="M626.3906,470.34577s33.74734,44.99646,16.87367,46.87131-29.99764-39.3719-29.99764-39.3719Z" transform="translate(-111 -43.18285)" fill="#c69076" />
