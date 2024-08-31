@@ -1,7 +1,7 @@
 import Loader from 'react-loaders'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp, faChevronDown, faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -23,12 +23,12 @@ const Projects = () => {
         return () => clearTimeout(timer);
     }, [])
 
-    const rotateCards = (direction) => {
+    const rotateCards = useCallback((direction) => {
         setFocusedCardIndex((prevIndex) => {
             const newIndex = (prevIndex + direction + projects.length) % projects.length;
             return newIndex;
         });
-    };
+    }, []);
 
     const handleManualRotation = (direction) => {
         rotateCards(direction);
@@ -58,7 +58,7 @@ const Projects = () => {
             clearInterval(rotationIntervalRef.current);
             clearTimeout(manualRotationTimeoutRef.current);
         };
-    }, [isHovering, isManualRotation]);
+    }, [isHovering, isManualRotation, rotateCards]);
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -84,7 +84,6 @@ const Projects = () => {
                 card.style.zIndex = index === focusedCardIndex ? 2 : 1;
                 card.style.pointerEvents = index === focusedCardIndex ? 'auto' : 'none';
 
-                // Remove blur for focused card on smaller screens
                 if (window.innerWidth <= 768 && index === focusedCardIndex) {
                     card.style.filter = 'blur(0px)';
                 }
