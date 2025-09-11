@@ -13,6 +13,43 @@
     --complementaryColor: #FFD700;
 }
 
+.contact-page {
+  // Override global Layout styles that conflict with flexbox
+  .text-zone {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 50% !important;
+    display: block !important;
+    vertical-align: unset !important;
+    max-height: none !important;
+    order: 1;
+    max-width: 600px;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 0 10%;
+    gap: 40px;
+  }
+
+  .svg-container {
+    order: 2;
+    width: 45%;
+    max-width: 450px;
+    
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
 .contact-info {
     width: 100%;
     margin-top: 40px;
@@ -112,16 +149,30 @@
     }
     
     .contact-page {
+        .content-wrapper {
+            flex-direction: column;
+            padding: 20px;
+            height: auto;
+        }
+
         .text-zone {
             position: initial;
-            width: 100%;
+            width: 100% !important;
+            max-width: none;
             transform: none;
             padding: 10px;
             box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+
+        .svg-container {
+            width: 80%;
+            max-width: 300px;
+            margin: 0 auto;
         }
 
         h1 {
-            font-size: 30px;
+            font-size: 40px;
         }
     }
 
@@ -150,6 +201,13 @@
 }
 
 @media screen and (max-width: 768px) {
+    .contact-page {
+        .svg-container {
+            width: 70%;
+            max-width: 280px;
+        }
+    }
+
     .contact-info {
         .social-links {
             .social-icons {
@@ -159,6 +217,28 @@
                     font-size: 24px;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contact-page {
+        .content-wrapper {
+            padding: 10px;
+        }
+        
+        h1 {
+            font-size: 32px;
+        }
+        
+        .svg-container {
+            width: 90%;
+            max-width: 250px;
+        }
+        
+        p {
+            font-size: 14px;
+            line-height: 1.5;
         }
     }
 }
