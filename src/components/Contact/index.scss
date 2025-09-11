@@ -13,131 +13,94 @@
     --complementaryColor: #FFD700;
 }
 
-.contact-form {
+.contact-info {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
 
-    ul {
-        padding: 0;
-        margin: 0;
+    .email-section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        opacity: 0;
+        animation: fadeInUp 2s 1.5s;
+        animation-fill-mode: forwards;
 
-        li {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            margin-bottom: 10px;
-            overflow: hidden;
-            display: block;
-            position: relative;
-            opacity: 0;
-            animation: fadeInUp 2s 2s;
-            animation-fill-mode: forwards;
-            clear: both;
+        svg {
+            font-size: 24px;
+            color: var(--complementaryColor);
+            margin-right: 15px;
         }
 
-        li.half {
-            width: 49%;
-            margin-left: 2%;
-            float: left;
-            clear: none;
+        a {
+            font-size: 20px;
+            color: var(--lightOne);
+            text-decoration: none;
+            transition: color 0.3s ease;
 
-            &:first-child {
-                margin-left: 0;
+            &:hover {
+                color: var(--complementaryColor);
             }
         }
+    }
 
-        li.submit-container {
+    .social-links {
+        opacity: 0;
+        animation: fadeInUp 2s 2s;
+        animation-fill-mode: forwards;
+
+        h3 {
+            color: var(--complementaryColor);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .social-icons {
             display: flex;
-            justify-content: flex-end;
+            gap: 30px;
             align-items: center;
-            height: 50px;
+
+            a {
+                color: var(--lightOne);
+                font-size: 32px;
+                transition: color 0.3s ease, transform 0.3s ease;
+                text-decoration: none;
+
+                &:hover {
+                    transform: translateY(-3px);
+                }
+
+                // LinkedIn hover color
+                &:nth-child(1):hover svg {
+                    color: #0077b5;
+                }
+
+                // GitHub hover color  
+                &:nth-child(2):hover svg {
+                    color: #f5f5f5;
+                }
+
+                // WhatsApp hover color
+                &:nth-child(3):hover svg {
+                    color: #25d366;
+                }
+
+                // X/Twitter hover color
+                &:nth-child(4):hover svg {
+                    color: #1da1f2;
+                }
+            }
         }
     }
+}
 
-    input[type='text'],
-    input[type='email'] {
-        width: 100%;
-        border: 0;
-        background: var(--backgroundColor);
-        height: 50px;
-        color: var(--lightOne);
-        padding: 0 20px;
-        box-sizing: border-box;
-        font-size: 16px;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    textarea {
-        width: 100%;
-        border: 0;
-        background: var(--backgroundColor);
-        height: 50px;
-        font-size: 16px;
-        color: var(--lightOne);
-        padding: 20px;
-        min-height: 150px;
-        box-sizing: border-box;
-    }
-
-    .flat-button {
-        color: var(--complementaryColor);
-        background: 0 0;
-        font: 11px;
-        letter-spacing: 3px;
-        text-decoration: none;
-        padding: 8px 10px;
-        border: 1px solid var(--complementaryColor);
-        border-radius: 4px;
-        float: right;
-        transition: .3s ease-in-out;
-
-        &:hover {
-            cursor: pointer;
-            background: var(--backgroundColor);
-            color: var(--complementaryColor);
-            border: 1px solid var(--backgroundColor);
-        }
-    }
-
-    .spinner {
-        width: 30px;
-        height: 30px;
-        border: 3px solid var(--complementaryColor);
-        border-top: 3px solid var(--backgroundColor);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
-    .message {
-        padding: 10px;
-        border-radius: 4px;
-        text-align: center;
-        font-weight: bold;
-
-        &.success {
-            color: var(--complementaryColor);
-        }
-
-        &.error {
-            color: var(--complementaryColor);
-        }
-    }
-
-    ::placeholder {
-        color: var(--lightOne);
+    to {
         opacity: 1;
-    }
-      
-    :-ms-input-placeholder {
-        color: var(--lightOne);
-    }
-      
-    ::-ms-input-placeholder {
-        color: var(--lightOne);
+        transform: translateY(0);
     }
 }
 
@@ -159,6 +122,43 @@
 
         h1 {
             font-size: 30px;
+        }
+    }
+
+    .contact-info {
+        .email-section {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+
+            a {
+                font-size: 18px;
+            }
+        }
+
+        .social-links {
+            .social-icons {
+                justify-content: center;
+                gap: 20px;
+
+                a {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-info {
+        .social-links {
+            .social-icons {
+                gap: 15px;
+
+                a {
+                    font-size: 24px;
+                }
+            }
         }
     }
 }

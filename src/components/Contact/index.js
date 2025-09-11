@@ -1,14 +1,13 @@
 import Loader from 'react-loaders'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
-import { useEffect, useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faGithub, faLinkedin, faWhatsapp, faXTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
-    const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState({ text: '', type: '' });
-    const form = useRef();
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -18,33 +17,6 @@ const Contact = () => {
         return () => clearTimeout(timer);
     }, [])
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setMessage({ text: '', type: '' });
-
-        emailjs.sendForm(
-            process.env.REACT_APP_EMAILJS_SERVICE_ID,
-            process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-            form.current,
-            process.env.REACT_APP_EMAILJS_USER_ID
-        )
-            .then((result) => {
-                console.log(result.text);
-                setMessage({ text: 'Message sent successfully!', type: 'success' });
-                form.current.reset();
-            }, (error) => {
-                console.log(error.text);
-                setMessage({ text: 'Failed to send the message, please try again', type: 'error' });
-            })
-            .finally(() => {
-                setLoading(false);
-                setTimeout(() => {
-                    setMessage({ text: '', type: '' });
-                }, 3000); // Hide message after 3 seconds
-            });
-    };
-
     return (
         <>
             <div className='container contact-page'>
@@ -53,39 +25,32 @@ const Contact = () => {
                         <AnimatedLetters letterClass={letterClass} strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']} idx={15} />
                     </h1>
                     <p>
-                        I am always open to new opportunities and collaborations. Whether you have a project in mind, a job opportunity, or just want to connect, I'd love to hear from you. Reach out to me at kurgatroba@gmail.com. Let's create something great together!
+                        I am always open to new opportunities and collaborations. Whether you have a project in mind, a job opportunity, or just want to connect, I'd love to hear from you. Let's create something great together!
                     </p>
 
-                    <div className='contact-form'>
-                        <form ref={form} onSubmit={sendEmail}>
-                            <ul>
-                                <li className='half'>
-                                    <input type='text' name='name' placeholder='Name' required style={{ fontSize: '16px' }} />
-                                </li>
-                                <li className='half'>
-                                    <input type='email' name='email' placeholder='Email' required style={{ fontSize: '16px' }} />
-                                </li>
-                                <li>
-                                    <input placeholder='Subject' type='text' name='subject' required style={{ fontSize: '16px' }} />
-                                </li>
-                                <li>
-                                    <textarea placeholder="Message" name="message" required style={{ fontSize: '16px' }}></textarea>
-                                </li>
-                                <li className='submit-container'>
-                                    {!loading && !message.text && (
-                                        <input type='submit' className='flat-button' value="SEND" />
-                                    )}
-                                    {loading && (
-                                        <div className="spinner"></div>
-                                    )}
-                                    {message.text && (
-                                        <div className={`message ${message.type}`}>
-                                            {message.text}
-                                        </div>
-                                    )}
-                                </li>
-                            </ul>
-                        </form>
+                    <div className='contact-info'>
+                        <div className='email-section'>
+                            <FontAwesomeIcon icon={faEnvelope} />
+                            <a href='mailto:contact@swe-robertkibet.com'>contact@swe-robertkibet.com</a>
+                        </div>
+
+                        <div className='social-links'>
+                            <h3>Connect with me</h3>
+                            <div className='social-icons'>
+                                <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/robert-kibet/' title='LinkedIn'>
+                                    <FontAwesomeIcon icon={faLinkedin} />
+                                </a>
+                                <a target='_blank' rel='noreferrer' href='https://github.com/swe-robertkibet/' title='GitHub'>
+                                    <FontAwesomeIcon icon={faGithub} />
+                                </a>
+                                <a target='_blank' rel='noreferrer' href='https://wa.me/+254714200683/' title='WhatsApp'>
+                                    <FontAwesomeIcon icon={faWhatsapp} />
+                                </a>
+                                <a target='_blank' rel='noreferrer' href='https://twitter.com/swe_robertkibet' title='X (Twitter)'>
+                                    <FontAwesomeIcon icon={faXTwitter} />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
