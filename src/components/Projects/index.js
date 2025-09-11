@@ -4,7 +4,7 @@ import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronUp, faChevronDown, faGlobe } from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -14,6 +14,10 @@ const Projects = () => {
     const containerRef = useRef(null);
     const rotationIntervalRef = useRef(null);
     const manualRotationTimeoutRef = useRef(null);
+
+    const isYouTubeUrl = (url) => {
+        return url && (url.includes('youtube.com') || url.includes('youtu.be'));
+    };
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -196,7 +200,14 @@ const Projects = () => {
                             <div className="project-links">
                                 {project.liveLink && (
                                     <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                                        <FontAwesomeIcon icon={faGlobe} />
+                                        {isYouTubeUrl(project.liveLink) ? (
+                                            <>
+                                                <FontAwesomeIcon icon={faYoutube} />
+                                                <span style={{ marginLeft: '8px' }}>YouTube Demo</span>
+                                            </>
+                                        ) : (
+                                            <FontAwesomeIcon icon={faGlobe} />
+                                        )}
                                     </a>
                                 )}
                                 {project.githubLink && (
