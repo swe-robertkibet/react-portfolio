@@ -101,9 +101,31 @@
                 font-size: 32px;
                 transition: color 0.3s ease, transform 0.3s ease;
                 text-decoration: none;
+                padding: 8px;
+                border-radius: 4px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-width: 44px;
+                min-height: 44px;
+                position: relative;
 
                 &:hover {
                     transform: translateY(-3px);
+                }
+
+                &:focus {
+                    outline: 2px solid var(--complementaryColor);
+                    outline-offset: 2px;
+                }
+
+                &:focus:not(:focus-visible) {
+                    outline: none;
+                }
+
+                &:focus-visible {
+                    outline: 2px solid var(--complementaryColor);
+                    outline-offset: 2px;
                 }
 
                 // LinkedIn hover color
@@ -239,6 +261,79 @@
         p {
             font-size: 14px;
             line-height: 1.5;
+        }
+    }
+
+    .contact-info {
+        .social-links {
+            .social-icons {
+                gap: 18px;
+
+                a {
+                    font-size: 26px;
+                    padding: 10px;
+                    min-width: 44px;
+                    min-height: 44px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-info {
+        .email-section {
+            margin-bottom: 30px;
+
+            a {
+                font-size: 16px;
+                word-break: break-all;
+            }
+        }
+
+        .social-links {
+            .social-icons {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                a {
+                    font-size: 28px;
+                    padding: 12px;
+                    min-width: 48px;
+                    min-height: 48px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 6px;
+                    transition: all 0.3s ease;
+
+                    &:active {
+                        transform: scale(0.95);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .contact-info {
+        .social-links {
+            .social-icons {
+                gap: 15px;
+
+                a {
+                    font-size: 24px;
+                    padding: 10px;
+                    min-width: 44px;
+                    min-height: 44px;
+                }
+            }
         }
     }
 }

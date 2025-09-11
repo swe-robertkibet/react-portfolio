@@ -36,7 +36,6 @@ const Contact = () => {
                             </div>
 
                             <div className='social-links'>
-                                <h3>Connect with me</h3>
                                 <div className='social-icons'>
                                     <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/robert-kibet/' title='LinkedIn'>
                                         <FontAwesomeIcon icon={faLinkedin} />
