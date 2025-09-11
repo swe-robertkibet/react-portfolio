@@ -1,3 +1,40 @@
+.about-page {
+  // Override global Layout styles that conflict with flexbox
+  .text-zone {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 50% !important;
+    display: block !important;
+    vertical-align: unset !important;
+    max-height: none !important;
+    order: 1;
+    max-width: 600px;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 0 10%;
+    gap: 40px;
+  }
+
+  .svg-container {
+    order: 2;
+    width: 45%;
+    max-width: 450px;
+    
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
 @media screen and (max-width: 1200px) {
   
   .tags,
@@ -7,16 +44,61 @@
   }
   
   .about-page {
+    .content-wrapper {
+      flex-direction: column;
+      padding: 20px;
+      height: auto;
+    }
+
     .text-zone {
       position: initial;
       width: 100%;
+      max-width: none;
       transform: none;
       padding: 10px;
       box-sizing: border-box;
+      margin-bottom: 40px;
+    }
+
+    .svg-container {
+      width: 80%;
+      max-width: 300px;
+      margin: 0 auto;
     }
 
     h1 {
       font-size: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-page {
+    .svg-container {
+      width: 70%;
+      max-width: 280px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-page {
+    .content-wrapper {
+      padding: 10px;
+    }
+    
+    h1 {
+      font-size: 32px;
+    }
+    
+    .svg-container {
+      width: 90%;
+      max-width: 250px;
+    }
+    
+    p {
+      font-size: 14px;
+      line-height: 1.5;
     }
   }
 }
