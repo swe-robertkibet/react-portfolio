@@ -132,12 +132,36 @@
                 font-size: 15px;
                 line-height: 16px;
                 color: #4d4d4e;
+
+                svg {
+                    transition: color 0.3s ease;
+                }
+
+                &:hover {
+                    svg {
+                        color: #ffd700;
+                    }
+                }
             }
 
-            &:hover {
-                .anchor-icon {
-                    color: green;
-                }
+            // LinkedIn hover color
+            &:nth-child(1) a:hover svg {
+                color: #0077b5;
+            }
+
+            // GitHub hover color  
+            &:nth-child(2) a:hover svg {
+                color: #f5f5f5;
+            }
+
+            // WhatsApp hover color
+            &:nth-child(3) a:hover svg {
+                color: #25d366;
+            }
+
+            // X/Twitter hover color
+            &:nth-child(4) a:hover svg {
+                color: #1da1f2;
             }
         }
     }
