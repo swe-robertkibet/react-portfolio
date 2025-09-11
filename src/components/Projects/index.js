@@ -25,6 +25,30 @@ const Projects = () => {
 
     const projects = [
         {
+            title: 'Multithreaded HTTP Web Server',
+            description: 'High-performance multithreaded HTTP web server in C++17 featuring epoll-based I/O, thread pooling, LRU caching, rate limiting, and comprehensive logging. Achieves 78K+ req/sec with Docker support and complete test suite.',
+            liveLink: '',
+            githubLink: 'https://github.com/swe-robertkibet/multithreaded-webserver-cpp'
+        },
+        {
+            title: 'Distributed Job Processing System',
+            description: 'High-performance distributed job processing system with multiple consensus algorithms (Bully, Raft, Gossip), advanced load balancing, JWT auth, TLS encryption, and comprehensive monitoring via Prometheus/Grafana.',
+            liveLink: '',
+            githubLink: 'https://github.com/swe-robertkibet/distributed-job-processor-go'
+        },
+        {
+            title: 'TCP Multiplexed Server',
+            description: 'A high-performance TCP server implementation that handles multiple concurrent clients using I/O multiplexing with the select() system call. Built without forking processes, this connection-oriented solution demonstrates efficient resource management and scalable network programming techniques in C.',
+            liveLink: '',
+            githubLink: 'https://github.com/swe-robertkibet/tcp-multiplexed-server'
+        },
+        {
+            title: 'Sheria Smart - AI Legal Assistant',
+            description: 'Comprehensive AI-powered legal assistant application designed to make Kenyan law accessible to everyone. Full-stack web application with dual chat modes (Quick Chat and Legal Analysis), automated document generation, OAuth authentication, built with Next.js, Express.js, TypeScript, and MySQL.',
+            liveLink: 'https://www.youtube.com/watch?v=yNDsp6nOhz8',
+            githubLink: 'https://github.com/swe-robertkibet/sheria-smart'
+        },
+        {
             title: 'Logic Gate Simulator',
             description: 'React app that simulates basic logic gates (AND, OR, NOT, NAND, NOR). Users can input binary values and see the output of different gates.',
             liveLink: 'https://logicsim.robertkibet.com/',
