@@ -31,7 +31,7 @@ const Contact = () => {
                     <div className='contact-info'>
                         <div className='email-section'>
                             <FontAwesomeIcon icon={faEnvelope} />
-                            <a href='mailto:contact@swe-robertkibet.com'>contact@swe-robertkibet.com</a>
+                            <a href='mailto:swe.robertkibet@gmail.com'>swe.robertkibet@gmail.com</a>
                         </div>
 
                         <div className='social-links'>
