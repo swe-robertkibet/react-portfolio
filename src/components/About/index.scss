@@ -48,35 +48,70 @@
       flex-direction: column;
       padding: 20px;
       height: auto;
+      min-height: 100vh;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 30px;
     }
 
     .text-zone {
-      position: initial;
-      width: 100%;
-      max-width: none;
-      transform: none;
-      padding: 10px;
+      position: static !important;
+      width: 100% !important;
+      max-width: 600px !important;
+      transform: none !important;
+      padding: 20px;
       box-sizing: border-box;
-      margin-bottom: 40px;
+      order: 1;
+      text-align: left;
     }
 
     .svg-container {
       width: 80%;
-      max-width: 300px;
+      max-width: 350px;
+      order: 2;
       margin: 0 auto;
+      display: block !important;
     }
 
     h1 {
       font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
     }
   }
 }
 
 @media screen and (max-width: 768px) {
   .about-page {
+    .content-wrapper {
+      padding: 15px;
+      gap: 25px;
+    }
+
+    .text-zone {
+      padding: 15px;
+      max-width: 100%;
+    }
+
     .svg-container {
-      width: 70%;
-      max-width: 280px;
+      width: 75%;
+      max-width: 300px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 12px;
     }
   }
 }
@@ -84,21 +119,99 @@
 @media screen and (max-width: 600px) {
   .about-page {
     .content-wrapper {
+      padding: 15px;
+      gap: 20px;
+    }
+
+    .text-zone {
       padding: 10px;
     }
     
     h1 {
       font-size: 32px;
+      margin-bottom: 15px;
     }
     
     .svg-container {
-      width: 90%;
-      max-width: 250px;
+      width: 85%;
+      max-width: 280px;
     }
     
     p {
       font-size: 14px;
       line-height: 1.5;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-page {
+    .content-wrapper {
+      padding: 12px;
+      gap: 15px;
+    }
+
+    .text-zone {
+      padding: 8px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    .svg-container {
+      width: 90%;
+      max-width: 250px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .about-page {
+    .content-wrapper {
+      padding: 10px;
+      gap: 12px;
+    }
+
+    h1 {
+      font-size: 26px;
+    }
+
+    .svg-container {
+      width: 95%;
+      max-width: 220px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .about-page {
+    .content-wrapper {
+      padding: 8px;
+      gap: 10px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .svg-container {
+      width: 100%;
+      max-width: 200px;
+    }
+
+    p {
+      font-size: 11px;
     }
   }
 }

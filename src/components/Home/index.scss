@@ -200,12 +200,105 @@
 
 @media screen and (max-width: 600px) {
   .home-page {
+    .content-wrapper {
+      padding: 15px;
+      gap: 15px;
+    }
+
     h1 {
       font-size: 32px;
     }
 
     h2 {
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .svg-container {
+      width: 90%;
+      max-width: 260px;
+    }
+
+    .flat-button {
+      font-size: 12px;
+      padding: 8px 16px;
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-page {
+    .content-wrapper {
+      padding: 12px;
+      gap: 12px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
       font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    .svg-container {
+      width: 95%;
+      max-width: 240px;
+    }
+
+    .flat-button {
+      font-size: 11px;
+      padding: 8px 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .home-page {
+    .content-wrapper {
+      padding: 10px;
+      gap: 10px;
+    }
+
+    h1 {
+      font-size: 26px;
+    }
+
+    h2 {
+      font-size: 8px;
+      letter-spacing: 1px;
+    }
+
+    .svg-container {
+      width: 100%;
+      max-width: 220px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .home-page {
+    .content-wrapper {
+      padding: 8px;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 7px;
+    }
+
+    .svg-container {
+      max-width: 200px;
+    }
+
+    .flat-button {
+      font-size: 10px;
+      padding: 6px 12px;
     }
   }
 }
